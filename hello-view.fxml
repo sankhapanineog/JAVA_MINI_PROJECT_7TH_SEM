@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.demo1.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <Label text="Enter the number of sales data:"/>
+    <TextField fx:id="numSalesInput" promptText="Enter number of sales data"/>
+
+    <Button text="Next" onAction="#onNumSalesInput"/>
+
+    <VBox fx:id="salesInputBox" visible="false">
+        <Label fx:id="salesInputLabel" text="Enter Sales Record:"/>
+        <TextField fx:id="salesInput" promptText="Enter sales amount"/>
+        <Button text="Next" onAction="#onSalesInput"/>
+    </VBox>
+
+    <VBox fx:id="forecastInputBox" visible="false">
+        <Label fx:id="forecastLabel" text="Enter Forecast Period (in months):"/>
+        <TextField fx:id="forecastPeriodInput" promptText="Enter forecast period"/>
+        <Button text="Next" onAction="#onForecastPeriodInput"/>
+    </VBox>
+
+    <Button text="Predict Sales" onAction="#onPredictButtonClick" visible="false"/>
+
+    <Label fx:id="predictedSalesLabel"/>
+</VBox>
+
